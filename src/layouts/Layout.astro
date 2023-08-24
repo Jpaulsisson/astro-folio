@@ -7,7 +7,6 @@ const { title } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
-
 const navItems = [
 	{
 		name: 'home',
@@ -32,35 +31,73 @@ const navItems = [
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<nav>
-			<ul>
+	<body class="w-full max-w-cutoff bg-primaryBg text-primaryFont flex flex-col items-center justify-between">
+		
+		<!-- NAVBAR -->
+
+		<nav class='relative py-10 w-1/2 flex items-center justify-evenly gap-4 text-3xl md:text-4xl'>
 				{navItems.map(({name, href}) => (
-					<li>
 						<a data-active={currentPath === href} href={href}>{name}</a>
-					</li>
-				))}
-			</ul>
+				))} 
 		</nav>
+
 		<slot />
 	</body>
 </html>
 
 
 <!-- GLOBAL STYLES -->
-
 <style is:global>
 
-	:root {
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+  scroll-snap-align: start;
+	font-family: 'League Spartan', serif;
+	font-weight: 100;
+}
 
-	}
+	:root {
+		--primaryFont: #1f1d3f;
+		--primaryBg: #f8eedd;
+		--accentGreen: #178c6d;
+		--accentPink: #eb8a90;
+		--accentBlue: #5299D3;
+	} 
 
 	html {
-
+		background-color: var(--primaryBg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 	}
+
+	img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 2px;
+  width: 3px;
+  background-color: var(--primaryBg);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: var(--accentGreen);
+}
 
 	a[data-active] {
 		color: var(--accentGreen);

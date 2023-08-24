@@ -1,15 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hello from '../../resources/hello.png';
+import Wifey from '../../resources/wifey.jpeg';
+import KidOne from '../../resources/kid-one.jpeg';
+import KidTwo from '../../resources/kid-two.jpeg';
+import Bday from '../../resources/muhbday.jpeg';
+import Footer from '../components/Footer.astro';
 
 ---
 
 <Layout title="Jpaulsisson Frontend Developer">
-	<main>
-		<h1 class="text-4xl text-green-700">Hello World.</h1>
-	</main>
+
+	<!-- INTRO -->
+
+	<section class='my-10 flex flex-col items-center justify-center gap-4 text-center'>
+		<h1 class='flex items-center justify-center gap-2 tracking-wide text-4xl md:text-5xl'><img class="bg-primaryBg p-0" src={Hello} alt='Hello sign' width={100}/> I&apos;m Paul,</h1>
+		<p class='w-3/5 text-lg tracking-wider md:text-2xl'>I&apos;m a frontend software engineer from Birmingham, AL. Let me save a few thousand words <sub class='text-accentPink text-3xl md:text-5xl'>&#10549;</sub></p>
+	</section>
+
+	<!-- PHOTO GRID -->
+
+	<section class='photo-grid w-4/5 mb-10 grid items-center justify-center grid-cols-12 grid-rows-5 rounded-xl'>
+		<div class=" col-start-2 col-span-6 row-start-1 row-span-3">
+			<img class='rounded-lg' src={Wifey} alt='my hot wife' />
+		</div>
+		<div class=" col-start-9 col-span-3 row-start-1 row-span-3">
+			<img class='rounded-lg' src={KidOne} alt='my son' />
+		</div>
+		<div class=' col-start-8 col-span-3 row-start-3 row-span-2' >
+			<img class='rounded-lg' src={KidTwo} alt='my daughter' />
+		</div>
+		<div class=' col-start-3 col-span-4 row-start-3 row-span-3'>
+			<img class='rounded-lg ' src={Bday} alt='my birthday' />
+		</div>      
+	</section>
+
+	<!-- short statement -->
+
+<section class='w-3/4 my-10'>
+  <p class='p-6 text-lg text-center border-b-[1px] border-solid border-accentGreen md:text-2xl'>
+  I love <b class='text-accentPink '>people</b> and <b class='text-accentPink '>problem</b> solving.
+  <br/>
+  <a class='p-[1px] text-base border-solid border-b-[1px] border-accentBlue md:text-lg' href='/works'>What have I done?</a>
+  </p>        
+</section>
+
+<Footer />
+
 </Layout>
 
 <style>
-
+	.photo-grid {
+  background-image: linear-gradient(0deg, transparent 0% 45%, var(--accentGreen) 45% 50%, transparent 50% 100%), linear-gradient(0deg, transparent 0% 35%, var(--accentGreen) 35% 42%, transparent 42% 100%);
+  background-size: 5% 5%, 4% 4%;
+  background-repeat: repeat;
+  box-shadow: 
+  inset 0px 0px 25px var(--primaryBg),
+  inset 0px 0px 50px var(--primaryBg),
+  inset 0px 0px 50px var(--primaryBg),
+  inset 0px 0px 100px var(--primaryBg),
+  inset 0px 0px 100px var(--primaryBg),
+  inset 0px 0px 125px var(--primaryBg),
+  inset 0px 0px 150px var(--primaryBg),
+  inset 0px 0px 200px var(--primaryBg);
+}
 	
 </style>
+
+
+<!-- HELLO SIGN COURTESY OF ---- Freepik.com
+<a href="https://www.freepik.com/free-vector/pink-hello-speech-bubble-neon-sign-vector_3759363.htm#query=hello%20sign&position=11&from_view=keyword&track=ais">Image by rawpixel.com</a> on Freepik -->

@@ -1,0 +1,73 @@
+
+
+  <dialog id="modal-dialog" class=" w-1/2 h-1/2 bg-accentGreen text-5xl m-auto">
+    <div>
+      <h4 class='text-accentGreen text-2xl md:text-4xl'>Email:</h4>
+        <p class=' text-primaryFont text-lg md:text-3xl'>paulsissonsemail@gmail.com</p>
+        <button id="copy-email" class='p-1 w-1/8 border-y-[1px]'>copy</button>
+    </div>
+    <button id="close-button"><span class="text-accentOrange">&#60;/</span>close<span class="text-accentOrange">&#62;</span></button>
+    <div class='text-center my-12'>
+      <h4 class='text-accentGreen text-2xl md:text-4xl'>Phone:</h4>
+      <p class=' text-primaryFont text-xl md:text-3xl'>205-520-8659</p>
+      <button id="copy-phone" class='p-1 w-1/8 text-accentGreen border-y-[1px] border-accentOrange'>copy</button>
+
+    </div>
+  </dialog>
+
+
+  <!-- CUSTOM STYLES FOR DIALOG / BACKDROP -->
+
+<style>
+  dialog::backdrop {
+    background-color: black;
+    opacity: .65;
+    border: 5px double #5299D3;
+  }
+</style>
+
+<script>
+  //SELECTORS
+  const modal = (document.getElementById("modal-dialog") as HTMLDialogElement);
+  const openButton = document.getElementById("open-button");
+  const closeButton = document.getElementById("close-button");
+  const copyEmailButton = document.getElementById("copy-email");
+  const copyPhoneButton = document.getElementById("copy-phone");
+
+  //OPEN BUTTON
+  if (openButton) openButton.addEventListener('click', () => {
+    if (modal) {
+      modal.showModal();
+    }
+  })
+
+  //CLOSE BUTTON
+  if (closeButton) closeButton.addEventListener('click', () => {
+    if (modal) {
+      modal.close();
+    }
+  })
+  
+  //CLOSE ON OUTSIDE CLICK
+  modal.addEventListener("click", (e) => {
+  const dialogDimensions = modal.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    modal.close()
+  }
+})
+
+//COPY BUTTONS
+if(copyEmailButton) copyEmailButton.addEventListener('click', () => {
+  navigator.clipboard.writeText('paulsissonsemail@gmail.com');
+})
+
+if(copyPhoneButton) copyPhoneButton.addEventListener('click', () => {
+  navigator.clipboard.writeText('205-520-8659');
+})
+
+</script>
