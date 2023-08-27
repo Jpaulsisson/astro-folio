@@ -1,8 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro"
 
+const greeting = 'Hello';
+let name = 'Paul';
 ---
 
 <Layout title="Reach out to me">
 
+  <script>
+    document.querySelector('#name-change').addEventListener('click', () => {
+      name === 'Paul' ? name = 'Scarlet' : name = 'Paul';
+    })
+    document.querySelector('#logger').addEventListener('click', () => {
+      console.log(name);
+    });
+  </script>
+  <h1 class="text-4xl">{greeting + ' ' + name}</h1>
+  <button id="name-change" class="border-2 border-accentPink rounded-lg p-2 bg-primaryFont text-primaryBg">Say hi to my daughter.</button>
+  <button id="logger" class="border-2 border-accentPink rounded-lg p-2 bg-primaryFont text-primaryBg">Log the name</button>
+  
 </Layout>

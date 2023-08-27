@@ -1,27 +1,28 @@
 
 
-  <dialog id="modal-dialog" class=" w-full h-1/2 border-4 border-primaryBg bg-accentGreen m-auto p-5 md:w-3/4 md:h-1/2">
-  
+  <dialog id="modal-dialog" class=" w-full h-1/2 border-4 border-primaryBg bg-primaryFont m-auto p-5 md:w-3/4 md:h-1/2">
+
+    <div class="h-full flex flex-col justify-between items-center ">
   <!--email and copy button -->
-    <div class="h-full flex flex-col justify-between items-center">
-      <div class="p-3 flex flex-col items-center justify-center">
+
+      <div class="p-3 flex flex-col items-center justify-center gap-y-2">
         <h4 class='text-accentPink text-2xl md:text-4xl'>Email:</h4>
-          <p class=' text-primaryFont text-xl md:text-3xl'>paulsissonsemail@gmail.com</p>
-          <button id="copy-email" class='p-1 w-1/8 border-y-[1px] text-xl'>copy</button>
+          <p class=' text-accentGreen text-xl md:text-3xl'>paulsissonsemail@gmail.com</p>
+          <button id="copy-email" class='p-1 w-full border-y-[1px] border-primaryBg text-accentBlue text-xl'>copy</button>
       </div>
 
     <!-- phone and copy button -->
 
-      <div class="p-3 flex flex-col items-center justify-center">
+      <div class="p-3 flex flex-col items-center justify-center gap-y-2">
         <h4 class='text-accentPink text-2xl md:text-4xl'>Phone:</h4>
-        <p class=' text-primaryFont text-xl md:text-3xl'>205-520-8659</p>
-        <button id="copy-phone" class='p-1 w-1/8 border-y-[1px] text-xl'>copy</button>
+        <p class=' text-accentGreen text-xl md:text-3xl'>205-520-8659</p>
+        <button id="copy-phone" class='p-1 w-full border-y-[1px] text-accentBlue text-xl'>copy</button>
 
     <!-- close button -->
 
       </div>
 
-      <button id="close-button" class="flex items-center justify-center mx-auto my-3 text-2xl text-primaryBg tracking-wide">
+      <button id="close-button" class="w-full flex items-center justify-center mx-auto my-3 text-2xl md:text-4xl text-primaryBg tracking-wide">
         <span class="text-accentPink">&#60;/</span>
         close
         <span class="text-accentPink">&#62;</span>
