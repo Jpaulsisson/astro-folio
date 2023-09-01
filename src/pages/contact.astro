@@ -1,22 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import Modal from "../components/Modal.astro";
+import GitHub from "../../resources/github.svg";
+import Phone from "../../resources/phone.svg";
+import Email from "../../resources/email.svg";
+import LinkedIn from "../../resources/linkedin.svg";
 
-const greeting = 'Hello';
-let name = 'Paul';
 ---
+<Layout title="Reach out!">
+  <Modal />
+  <main class="flex flex-col md:flex-row items-center justify-center md:mt-40 gap-5">
+    <button id="email-modal-opener">
+      <img src={Email} alt="Email" width="125" />
+    </button>
+    <button id="phone-modal-opener">
+      <img src={Phone} alt="Phone" width="125" />
+    </button>
+    <a href=""><img src={LinkedIn} alt="Linked In" width="125"/></a>
+    <a href=""><img src={GitHub} alt="Github" width="125"/></a>
 
-<Layout title="Reach out to me">
+    <script>
+        const emailModal = document.getElementById('email-modal-opener')
+        const phoneModal = document.getElementById('phone-modal-opener')
+        const modal = (document.getElementById('modal-dialog') as HTMLDialogElement)
 
-  <script>
-    document.querySelector('#name-change').addEventListener('click', () => {
-      name === 'Paul' ? name = 'Scarlet' : name = 'Paul';
+        if (emailModal) emailModal.addEventListener('click', () => {
+      if (modal) {
+        modal.showModal();
+      }
     })
-    document.querySelector('#logger').addEventListener('click', () => {
-      console.log(name);
-    });
-  </script>
-  <h1 class="text-4xl">{greeting + ' ' + name}</h1>
-  <button id="name-change" class="border-2 border-accentPink rounded-lg p-2 bg-primaryFont text-primaryBg">Say hi to my daughter.</button>
-  <button id="logger" class="border-2 border-accentPink rounded-lg p-2 bg-primaryFont text-primaryBg">Log the name</button>
-  
+
+    if (phoneModal) phoneModal.addEventListener('click', () => {
+      if (modal) {
+        modal.showModal();
+      }
+    })
+    </script>
+
+  </main>
 </Layout>
