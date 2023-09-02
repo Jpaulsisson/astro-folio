@@ -174,15 +174,15 @@ function handleNext() {
 
             <!-- more info content -->
 
-            <div class={`more-info w-full inset-0 absolute ${openRecent} bg-primaryBg opacity-95 flex flex-col items-center justify-center`}>
+            <div class={`more-info w-full inset-0 absolute ${openRecent} bg-primaryFont opacity-90 flex flex-col items-center justify-center`}>
               <h3 class='flex items-center justify-center text-accentGreen text-xl md:text-3xl'>{name}</h3>
-              <p class='text-xl md:text-2xl' >Tech stack:</p>
+              <p class='text-primaryBg text-xl md:text-2xl' >Tech stack:</p>
               <div class='flex items-center justify-around gap-2 md:gap-6'>
                 {#each tags as tag}
                   <img src={tag} alt={name} class=' w-10 md:w-[10%]'/>
                 {/each}
               </div>
-              <a class='flex justify-center items-center text-xl md:text-2xl' target="_blank" rel="noopener noreferrer" href={repo}><span class='text-accentGreen text-2xl' >&#60;</span>github repo<span class='text-accentGreen text-2xl'>&#62;</span>
+              <a class='flex justify-center items-center text-primaryBg text-xl md:text-2xl' target="_blank" rel="noopener noreferrer" href={repo}><span class='text-accentGreen text-2xl' >&#60;</span>github repo<span class='text-accentGreen text-2xl'>&#62;</span>
               </a>
             </div>
 
@@ -205,7 +205,7 @@ function handleNext() {
 
         <!-- begin more info content -->
 
-        <div class={`more-info w-full inset-0 absolute ${openCurrent} bg-primaryBg opacity-95 flex flex-col items-center justify-center`}>
+        <div class={`more-info w-full inset-0 absolute ${openCurrent} bg-primaryFont opacity-90 flex flex-col items-center justify-center text-primaryBg`}>
           <h3 class='flex items-center justify-center text-accentGreen text-xl md:text-3xl'>Travel Planner</h3>
           <p class='text-xl md:text-2xl' >Tech stack:</p>
           <div class='flex items-center justify-around gap-2 md:gap-6'>
